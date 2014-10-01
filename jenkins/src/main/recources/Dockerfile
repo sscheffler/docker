@@ -11,6 +11,6 @@ RUN \
   wget http://mirrors.jenkins-ci.org/war/latest/jenkins.war
 
 # Define default command.
-CMD /tomcat/bin/catalina.sh start && sleep 30 && ls -a /root/.jenkins/jobs  && tail -f /tomcat/logs/catalina.out 
+CMD /tomcat/bin/catalina.sh start && sleep 30 && ls -a /root/.jenkins/plugins  && tail -f /tomcat/logs/catalina.out 
 
 EXPOSE 8080
