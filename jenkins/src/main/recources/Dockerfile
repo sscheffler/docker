@@ -7,6 +7,7 @@ MAINTAINER Stefan Scheffler
 # imstall tomcat
 RUN \
   mkdir -p /data/jenkins && \
+  mkdir -p /data/repository && \
   cd /tomcat/webapps && \
   wget http://mirrors.jenkins-ci.org/war/latest/jenkins.war
 
