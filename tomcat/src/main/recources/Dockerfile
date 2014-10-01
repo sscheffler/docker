@@ -13,4 +13,4 @@ RUN \
 
 RUN \
   apt-get update -y && \
-  apt-get install maven -y
+  apt-get install maven git -y
