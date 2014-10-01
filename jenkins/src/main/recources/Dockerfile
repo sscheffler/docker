@@ -11,9 +11,11 @@ RUN \
   wget http://www.interior-dsgn.com/apache/tomcat/tomcat-8/v8.0.14/bin/apache-tomcat-8.0.14.tar.gz && \
   tar xvzf apache-tomcat-8.0.14.tar.gz && \
   rm -f apache-tomcat-8.0.14.tar.gz && \
-  mv /tmp/apache-tomcat-8.0.14 /tomcat
+  mv /tmp/apache-tomcat-8.0.14 /tomcat && \
+  cd /tomcat/webapps && \
+  wget http://mirrors.jenkins-ci.org/war/latest/jenkins.war
 
 # Define default command.
-CMD echo "bla" && /tomcat/bin/catalina.sh start  && tail -f /tomcat/logs/catalina.out
+CMD /tomcat/bin/catalina.sh start  && tail -f /tomcat/logs/catalina.out
 
 EXPOSE 8080
