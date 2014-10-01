@@ -3,7 +3,7 @@ FROM martinseeler/oracle-server-jre
 
 MAINTAINER Stefan Scheffler
 
-# imstall tomcat
+# install tomcat
 RUN \
   cd /tmp && \
   wget http://www.interior-dsgn.com/apache/tomcat/tomcat-8/v8.0.14/bin/apache-tomcat-8.0.14.tar.gz && \

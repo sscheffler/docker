@@ -4,14 +4,17 @@ FROM sscheffler/tomcat
 
 MAINTAINER Stefan Scheffler
 
+#env
+DATA=/data 
+
 # imstall tomcat
 RUN \
-  mkdir -p /data/jenkins && \
-  mkdir -p /data/repository && \
+  mkdir -p $DATA/jenkins && \
+  mkdir -p $DATA/repository && \
   cd /tomcat/webapps && \
   wget http://mirrors.jenkins-ci.org/war/latest/jenkins.war
 
 # Define default command.
-CMD /tomcat/bin/catalina.sh start && ls -la /etc/alternatives/java && tail -f /tomcat/logs/catalina.out 
+CMD /tomcat/bin/catalina.sh start && tail -f /tomcat/logs/catalina.out 
 
 EXPOSE 8080
