@@ -1,16 +1,11 @@
-FROM ubuntu:precise
-FROM martinseeler/oracle-server-jre
-FROM sscheffler/tomcat
+FROM stefanscheffler/tomcat
 
 MAINTAINER Stefan Scheffler
 
-#env
-DATA=/data 
-
-# imstall tomcat
+# install jenkins
 RUN \
-  mkdir -p $DATA/jenkins && \
-  mkdir -p $DATA/repository && \
+  mkdir -p /data/jenkins && \
+  mkdir -p /data/repository && \
   cd /tomcat/webapps && \
   wget http://mirrors.jenkins-ci.org/war/latest/jenkins.war
 
