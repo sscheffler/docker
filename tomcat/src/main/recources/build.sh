@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sudo docker build -t=sscheffler/tomcat .
+sudo docker build -t=stefanscheffler/tomcat .
