@@ -10,8 +10,9 @@ RUN \
 USER postgres
 
 RUN    /etc/init.d/postgresql start &&\
-    psql --command "CREATE USER docker WITH SUPERUSER PASSWORD 'docker';" &&\
-    createdb -O docker docker
+    psql --command "CREATE USER ekz WITH SUPERUSER PASSWORD 'ekz2014';" &&\
+    createdb -O ekz -T template0 -E UTF8 ekz &&\
+    psql ekz --command "CREATE SCHEMA dvb_manage AUTHORIZATION ekz;"
 # Adjust PostgreSQL configuration so that remote connections to the
 # database are possible.
 RUN echo "host all  all    0.0.0.0/0  md5" >> /etc/postgresql/9.3/main/pg_hba.conf
