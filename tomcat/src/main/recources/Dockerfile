@@ -1,5 +1,4 @@
-FROM ubuntu:precise
-FROM martinseeler/oracle-server-jre
+FROM stefanscheffler/jdk7
 
 MAINTAINER Stefan Scheffler
 
@@ -10,7 +9,3 @@ RUN \
   tar xvzf apache-tomcat-8.0.14.tar.gz && \
   rm -f apache-tomcat-8.0.14.tar.gz && \
   mv /tmp/apache-tomcat-8.0.14 /tomcat
-
-RUN \
-  apt-get update -y && \
-  apt-get install maven git openjdk-7-jdk -y
