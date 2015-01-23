@@ -1,2 +1,2 @@
-sudo docker stop jenkins
-sudo docker rm jenkins
+docker stop nexus
+docker rm nexus
