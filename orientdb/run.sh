@@ -1,14 +1,12 @@
 #!/bin/bash
 
-#stop old container
-#bash stop.sh
+#VARIABLES
+DATA=/data/orientdb
+CONFIG=/etc/orientdb/config
 
-#set environment
-#H#OME=/home/sscheffler
-#M2=.m2/repository
-
-#rebuild and run	 container
-#sudo docker build --quiet=false -t=abiyasa/orientdb-2.0 . 
+#STOP OLD CONTAINER
 sudo docker stop orientdb
 sudo docker rm orientdb
-sudo docker run -d -p 2424:2424 -p 2480:2480 --name orientdb abiyasa/orientdb-2.0
+
+#RUN CONTAINER
+sudo docker run -d -v $CONFIG:/opt/orientdb/config -v $DATA/db:/opt/orientdb/databases -v $DATA/backup:/opt/orientdb/backup -p 2424:2424 -p 2480:2480 --name orientdb abiyasa/orientdb-2.0
