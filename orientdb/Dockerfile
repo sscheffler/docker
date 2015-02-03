@@ -4,7 +4,8 @@
 # http://crosbymichael.com/dockerfile-best-practices-take-2.html
 ############################################################
 
-FROM martinseeler/oracle-server-jre 
+FROM martinseeler/oracle-server-jre:1.8_20 
+#ROM mikemckibben/jdk8
 
 MAINTAINER Stefan Scheffler (stefan-scheffler@web.de)
 
@@ -17,7 +18,7 @@ RUN mkdir -p /var/log/supervisor
 
 # Install OrientDB dependencies
 # https://www.digitalocean.com/community/tutorials/how-to-install-and-use-orientdb-on-an-ubuntu-12-04-vps
-#RUN apt-get -y install openjdk-7-jdk git ant
+RUN apt-get -y install git ant
 
 ENV ORIENTDB_VERSION 2.0.1
 
