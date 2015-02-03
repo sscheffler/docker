@@ -1,8 +1,8 @@
 #!/bin/bash
 
 #stop old container
-bash docker stop jdk8
-bash docker rm jdk8
+docker stop jdk8
+docker rm jdk8
 
 #set environment
 HOME=/home/sscheffler
