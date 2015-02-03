@@ -4,9 +4,9 @@
 # http://crosbymichael.com/dockerfile-best-practices-take-2.html
 ############################################################
 
-FROM debian:jessie
+FROM martinseeler/oracle-server-jre 
 
-MAINTAINER I. Abiyasa Suhardi (ilham.suhardi@gmail.com)
+MAINTAINER Stefan Scheffler (stefan-scheffler@web.de)
 
 # Update the default application repository sources list
 RUN apt-get update
@@ -17,9 +17,9 @@ RUN mkdir -p /var/log/supervisor
 
 # Install OrientDB dependencies
 # https://www.digitalocean.com/community/tutorials/how-to-install-and-use-orientdb-on-an-ubuntu-12-04-vps
-RUN apt-get -y install openjdk-7-jdk git ant
+#RUN apt-get -y install openjdk-7-jdk git ant
 
-ENV ORIENTDB_VERSION 2.0
+ENV ORIENTDB_VERSION 2.0.1
 
 # Build OrientDB cleaning up afterwards
 RUN cd && \
