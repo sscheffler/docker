@@ -4,7 +4,8 @@
 # http://crosbymichael.com/dockerfile-best-practices-take-2.html
 ############################################################
 
-FROM martinseeler/oracle-server-jre:1.8_20 
+FROM stefanscheffler/jdk8
+#FROM martinseeler/oracle-server-jre:1.8_20 
 #ROM mikemckibben/jdk8
 
 MAINTAINER Stefan Scheffler (stefan-scheffler@web.de)
