@@ -17,22 +17,27 @@ RUN apt-get update
 RUN apt-get -y install supervisor
 RUN mkdir -p /var/log/supervisor
 
+RUN cd /opt && \
+	tar -xzf jdk-8u31-linux-x64.tar.gz
+	
+
 # Install OrientDB dependencies
 # https://www.digitalocean.com/community/tutorials/how-to-install-and-use-orientdb-on-an-ubuntu-12-04-vps
 RUN apt-get -y install git ant
 
 ENV ORIENTDB_VERSION 2.0.1
+ENV JAVA_HOME /opt/jdk1.8.0_31
 
 # Build OrientDB cleaning up afterwards
 RUN cd && \
     git clone https://github.com/orientechnologies/orientdb.git --single-branch --depth 1 --branch $ORIENTDB_VERSION && \
-    cd orientdb && \
+    cd orientdb && \ 
     ant clean installg && \
-    mv /root/releases/orientdb-community-* /opt/orientdb && \
+    mv /releases/orientdb-community-* /opt/orientdb && \
     rm -rf /opt/orientdb/databases/* ~/orientdb
 
 # use supervisord to start orientdb
-ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+#ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 EXPOSE 2424
 EXPOSE 2480
@@ -41,4 +46,6 @@ EXPOSE 2480
 USER root
 
 # Default command when starting the container
-CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
+#CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
+#CMD ["ls", "/opt/orientdb/bin"]
+CMD ["/opt/orientdb/bin/server.sh"]
