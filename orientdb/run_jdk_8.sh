@@ -5,8 +5,8 @@ DATA=/data/orientdb
 CONFIG=/etc/orientdb/config
 
 #STOP OLD CONTAINER
-sudo docker stop odb
-sudo docker rm odb
+sudo docker stop orientdb
+sudo docker rm orientdb
 
 #RUN CONTAINER
 sudo docker build --quiet=false -t=stefanscheffler/orientdb .

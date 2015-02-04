@@ -5,8 +5,6 @@
 ############################################################
 
 FROM stefanscheffler/jdk8
-#FROM martinseeler/oracle-server-jre:1.8_20 
-#ROM mikemckibben/jdk8
 
 MAINTAINER Stefan Scheffler (stefan-scheffler@web.de)
 
@@ -17,23 +15,23 @@ RUN apt-get update
 RUN apt-get -y install supervisor
 RUN mkdir -p /var/log/supervisor
 
-RUN cd /opt && \
-	tar -xzf jdk-8u31-linux-x64.tar.gz
+#RUN cd /opt && \
+#	tar -xzf jdk-8u31-linux-x64.tar.gz
 	
 
 # Install OrientDB dependencies
 # https://www.digitalocean.com/community/tutorials/how-to-install-and-use-orientdb-on-an-ubuntu-12-04-vps
-RUN apt-get -y install git ant
+RUN apt-get -y install git ant maven
 
 ENV ORIENTDB_VERSION 2.0.1
 ENV JAVA_HOME /opt/jdk1.8.0_31
 
 # Build OrientDB cleaning up afterwards
 RUN cd && \
-    git clone https://github.com/orientechnologies/orientdb.git --single-branch --depth 1 --branch $ORIENTDB_VERSION && \
-    cd orientdb && \ 
-    ant clean installg && \
-    mv /releases/orientdb-community-* /opt/orientdb && \
+    git clone https://github.com/orientechnologies/orientdb.git --single-branch --depth 1 --branch $ORIENTDB_VERSION
+RUN cd orientdb && \ 
+    ant clean installg 
+RUN mv /releases/orientdb-community-* /opt/orientdb && \
     rm -rf /opt/orientdb/databases/* ~/orientdb
 
 # use supervisord to start orientdb
