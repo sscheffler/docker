@@ -44,6 +44,4 @@ EXPOSE 2480
 USER root
 
 # Default command when starting the container
-#CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
-#CMD ["ls", "/opt/orientdb/bin"]
-CMD ["/opt/orientdb/bin/server.sh"]
+ CMD ["/opt/orientdb/bin/server.sh"]

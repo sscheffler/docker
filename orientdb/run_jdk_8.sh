@@ -5,10 +5,9 @@ DATA=/data/orientdb
 CONFIG=/etc/orientdb/config
 
 #STOP OLD CONTAINER
-sudo docker stop orientdb
-sudo docker rm orientdb
+docker stop orientdb
+docker rm orientdb
 
 #RUN CONTAINER
-sudo docker build --quiet=false -t=stefanscheffler/orientdb .
-sudo docker run -d -v $DATA/log:/opt/orientdb/log -v $CONFIG:/opt/orientdb/config -v $DATA/db:/opt/orientdb/databases -v $DATA/backup:/opt/orientdb/backup -p 2424:2424 -p 2480:2480 --name orientdb stefanscheffler/orientdb
-# sudo docker run -d --name odb stefanscheffler/orientdb
+docker build --quiet=false -t=stefanscheffler/orientdb .
+docker run -d -v $DATA/log:/opt/orientdb/log -v $CONFIG:/opt/orientdb/config -v $DATA/db:/opt/orientdb/databases -v $DATA/backup:/opt/orientdb/backup -p 2424:2424 -p 2480:2480 --name orientdb stefanscheffler/orientdb
