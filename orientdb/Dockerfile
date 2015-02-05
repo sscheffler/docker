@@ -1,10 +1,5 @@
-############################################################
-# Dockerfile to run an OrientDB (Graph) Container
-# http://crosbymichael.com/dockerfile-best-practices.html
-# http://crosbymichael.com/dockerfile-best-practices-take-2.html
-############################################################
 
-FROM stefanscheffler/jdk8
+FROM sscheffler/jdk:1_8_31
 
 MAINTAINER Stefan Scheffler (stefan-scheffler@web.de)
 
