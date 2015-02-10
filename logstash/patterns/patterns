@@ -1,0 +1,12 @@
+# own
+PAY (Payload:.*)
+MES ((Inbound|Outbound)\sMessage)
+ID (\[\{\{Conrad-Session-Id,.*\}\}\])
+SESSION_ID ([\w]{8}-[\w]{4}-[\w]{4}-[\w]{4}-[\w]{12})
+CXF_ID ([\d]{5})
+HEADERS (\{.*\})
+MESSAGE_TYPE (Inbound|Outbound)
+PAYLOAD ((.|\n)*)
+HTTP_METHOD (POST|GET|PUT)
+TIME ([\d]{4}-[\d]{2}-[\d]{2}\s[\d]{2}:[\d]{2}:[\d]{2},[\d]{3})
+
