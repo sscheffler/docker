@@ -10,10 +10,11 @@ RUN 	cd /opt/ && \
 	mv logstash-1.4.2 logstash && \
 	rm logstash-1.4.2.tar.gz
 
-RUN	mkdir -p /data/config &&\
+RUN	mkdir -p /data/config/patterns &&\
 	mkdir -p  /data/input
 
-ADD ccp-request.conf /data/config/config.conf
+ADD request.conf /data/config/config.conf
+ADD patterns /data/config/patterns/
 
 ENV ABC=abc
 
