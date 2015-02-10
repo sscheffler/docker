@@ -19,4 +19,4 @@ ADD patterns /data/config/patterns/
 ENV ABC=abc
 ENV JAVA_JOME=/opt/jdk1.8.0_31/
 
-CMD ["/opt/logstash/bin/logstash","agent","-f","/data/config/config.conf]
+CMD ["/opt/logstash/bin/logstash","agent","-f","/data/config/config.conf"]
