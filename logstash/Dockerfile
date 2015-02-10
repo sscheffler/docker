@@ -1,0 +1,1 @@
+FROM stefanscheffler/jdk8
