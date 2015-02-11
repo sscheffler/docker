@@ -9,4 +9,5 @@ MESSAGE_TYPE (Inbound|Outbound)
 PAYLOAD ((.|\n)*)
 HTTP_METHOD (POST|GET|PUT)
 TIME ([\d]{4}-[\d]{2}-[\d]{2}\s[\d]{2}:[\d]{2}:[\d]{2},[\d]{3})
-
+SERVICE_TYPE (checkout|user|order|cart)
+CLUSTER_NODE (degtlu[nv]\d{4})
