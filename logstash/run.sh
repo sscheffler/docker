@@ -1,3 +1,7 @@
 docker stop logstash
 docker rm logstash
-docker run -d -v /home/sscheffler/temp/logstash/index/:/data/input --name=logstash --link kibana:el --link orientdb:orient stefanscheffler/logstash
+HOME=/home/sscheffler
+
+
+
+docker run -d -v $HOME/repository/docker/logstash/config:/data/config -v $HOME/temp/logstash/index/:/data/input --name=logstash --link kibana:elastic --link orientdb:orient sscheffler/logstash
