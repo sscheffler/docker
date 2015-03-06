@@ -1,17 +1,17 @@
 
 echo Stoping containers
-#docker stop logstash
+docker stop logstash
 docker stop kibana
 docker stop orientdb
 
 echo Removing containers
-#docker rm logstash
+docker rm logstash
 docker rm kibana
 docker rm orientdb
 
 HOME=/home/sscheffler
 DATA=/data
-CONFIG=/etc/orientdb/config
+CONFIG=$HOME/repository/docker/log.environment/config/orientdb
 
 echo Creating containers
 docker create -v $DATA/elasticsearch:/elasticsearch/data -p 9200:9200 -p 127.0.0.1:8000:8000 --name kibana nshou/elasticsearch-kibana
