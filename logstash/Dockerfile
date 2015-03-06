@@ -13,10 +13,6 @@ RUN 	cd /opt/ && \
 RUN	mkdir -p /data/config/patterns &&\
 	mkdir -p  /data/input
 
-ADD request.conf /data/config/config.conf
-ADD patterns /data/config/patterns/
-
-ENV ABC=abc
 ENV JAVA_JOME=/opt/jdk1.8.0_31/
 
 CMD ["/opt/logstash/bin/logstash","agent","-f","/data/config/config.conf"]
