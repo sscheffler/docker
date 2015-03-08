@@ -12,7 +12,8 @@ RUN 	cd /opt/ && \
 
 RUN	mkdir -p /data/config/patterns && \
 	mkdir -p  /data/input && \
-	mkdir /data/since_db
+	mkdir /data/since_db && \
+	mkdir /data/logs
 
 ENV JAVA_JOME=/opt/jdk1.8.0_31/
 
