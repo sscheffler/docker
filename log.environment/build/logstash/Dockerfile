@@ -10,8 +10,9 @@ RUN 	cd /opt/ && \
 	mv logstash-1.4.2 logstash && \
 	rm logstash-1.4.2.tar.gz
 
-RUN	mkdir -p /data/config/patterns &&\
+RUN	mkdir -p /data/config/patterns && \
 	mkdir -p  /data/input
+	mkdir /data/since_db
 
 ENV JAVA_JOME=/opt/jdk1.8.0_31/
 
