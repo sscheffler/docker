@@ -2,13 +2,16 @@ FROM java:8
 
 MAINTAINER Stefan Scheffler (stefan-scheffler@web.de)
 
-# WORKDIR /data
+WORKDIR /data
 
-# RUN 	cd /opt/ && \
-	wget https://download.elasticsearch.org/logstash/logstash/logstash-1.4.2.tar.gz && \
-	tar -xzf logstash-1.4.2.tar.gz && \
-	mv logstash-1.4.2 logstash && \
-	rm logstash-1.4.2.tar.gz
+ENV KARAF_VERSION 4.0.0.M2
+
+# Download Karaf
+ RUN 	cd /opt/ && \
+	wget http://psg.mtu.edu/pub/apache/karaf/4.0.0.M2/apache-karaf-4.0.0.M2.tar.gz && \
+	tar -xzf apache-karaf-4.0.0.M2.tar.gz && \
+	mv apache-karaf-4.0.0.M2 karaf && \
+	rm apache-karaf-4.0.0.M2.tar.gz
 
  # RUN	mkdir -p /data/config/patterns && \
 #	mkdir -p  /data/input && \
