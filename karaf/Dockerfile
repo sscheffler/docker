@@ -18,6 +18,6 @@ ENV KARAF_VERSION 4.0.0.M2
 #	mkdir /data/since_db && \
 #	mkdir /data/logs
 #
-# ENV JAVA_JOME=/opt/jdk1.8.0_31/
+ENV JAVA_JOME=/opt/jdk1.8.0_31/
 
 # CMD ["/opt/logstash/bin/logstash","agent","-f","/data/config/config.conf"]
