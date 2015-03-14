@@ -1,1 +1,1 @@
-docker run -t -i  stefanscheffler/jdk /bin/bash
+docker run -t -i  sscheffler/jdk /bin/bash
