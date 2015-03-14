@@ -8,7 +8,10 @@ RUN apt-get install -y wget tar
 
 ENV JDK8=jdk-8u31-linux-x64
 ENV JDK8_FOLDER=jdk1.8.0_31
+
 ENV JDK7=jdk-7u75-linux-x64
+ENV JDK7_FOLDER=jdk1.7.0_75
+
 # http://download.oracle.com/otn-pub/java/jdk/7u75-b13/jdk-7u75-linux-x64.tar.gz
 
 # DOWNLOAD / EXTRACT / RENAME - JDK 8
@@ -17,3 +20,11 @@ RUN cd /opt/ && \
 	tar -xzf $JDK8.tar.gz  && \
 	rm -f $JDK8.tar.gz && \
 	mv $JDK8_FOLDER jdk8
+
+# DOWNLOAD / EXTRACT / RENAME - JDK 7
+RUN cd /opt/ && \
+        wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/7u75-b13/$JDK7.tar.gz && \
+        tar -xzf $JDK7.tar.gz  && \
+        rm -f $JDK7.tar.gz && \
+        mv $JDK7_FOLDER jdk7
+
