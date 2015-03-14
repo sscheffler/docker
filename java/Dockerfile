@@ -28,3 +28,16 @@ RUN cd /opt/ && \
         rm -f $JDK7.tar.gz && \
         mv $JDK7_FOLDER jdk7
 
+#UPDATE ALTERNATIVES FOR JDK8
+RUN update-alternatives --install "/usr/bin/java" "java" "/opt/jdk8/bin/java" 0 &&\
+	update-alternatives --install "/usr/bin/javac" "javac" "/opt/jdk8/bin/javac" 0 &&\
+	update-alternatives --install "/usr/bin/javaws" "javaws" "/opt/jdk8/bin/javaws" 0 &&\
+	update-alternatives --install "/usr/bin/jar" "jar" "/opt/jdk8/bin/jar" 0
+
+#UPDATE ALTERNATIVES FOR JDK7
+RUN update-alternatives --install "/usr/bin/java" "java" "/opt/jdk7/bin/java" 10 &&\
+        update-alternatives --install "/usr/bin/javac" "javac" "/opt/jdk7/bin/javac" 10 &&\
+        update-alternatives --install "/usr/bin/javaws" "javaws" "/opt/jdk7/bin/javaws" 10 &&\
+        update-alternatives --install "/usr/bin/jar" "jar" "/opt/jdk7/bin/jar" 10
+
+
