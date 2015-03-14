@@ -1,5 +1,5 @@
 
-FROM sscheffler/jdk:1_8_31
+FROM sscheffler/jdk
 
 MAINTAINER Stefan Scheffler (stefan-scheffler@web.de)
 
@@ -9,7 +9,7 @@ RUN apt-get update
 RUN apt-get -y install git ant maven
 
 ENV ORIENTDB_VERSION 2.0.1
-ENV JAVA_HOME /opt/jdk1.8.0_31
+ENV JAVA_HOME /opt/jdk8
 
 # Build OrientDB cleaning up afterwards
 RUN git clone https://github.com/orientechnologies/orientdb.git --single-branch --depth 1 --branch $ORIENTDB_VERSION
