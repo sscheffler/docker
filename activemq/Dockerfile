@@ -8,10 +8,10 @@ WORKDIR /data
 ENV JAVA_HOME=/opt/jdk7
 
 RUN cd /opt &&\
-	wget http://archive.apache.org/dist/activemq/apache-activemq/5.7.0/apache-activemq-5.7.0-bin.tar.gz &&\
-	tar -xzf apache-activemq-5.7.0-bin.tar.gz &&\
-	mv apache-activemq-5.7.0 activemq &&\
-	rm apache-activemq-5.7.0-bin.tar.gz
+	wget http://archive.apache.org/dist/activemq/5.10.2/apache-activemq-5.10.2-bin.tar.gz &&\
+	tar -xzf apache-activemq-5.10.2-bin.tar.gz &&\
+	mv apache-activemq-5.10.2 activemq &&\
+	rm apache-activemq-5.10.2-bin.tar.gz
 
 EXPOSE 8161
 
