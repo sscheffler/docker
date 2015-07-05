@@ -1,0 +1,1 @@
+docker run -i -t -d --name neo4j -p 7474:7474 -v /data/neo4j/data:/var/lib/neo4j/data/graph.db -v /data/neo4j/log:/var/lib/neo4j/data/log sscheffler/neo4j
