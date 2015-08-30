@@ -20,3 +20,6 @@ RUN ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/linuxbrew/g
 # install nodejs
 RUN	brew install node 
 
+#grunt
+RUN npm install -g grunt-cli
+
