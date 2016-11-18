@@ -13,6 +13,6 @@ RUN cd /opt &&\
 	mv apache-activemq-5.13.4 activemq &&\
 	rm apache-activemq-5.13.4-bin.tar.gz
 
-EXPOSE 8161
+EXPOSE 8161 61616
 
 CMD ["/bin/sh","/opt/activemq/bin/activemq","console"]
